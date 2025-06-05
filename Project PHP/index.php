@@ -182,7 +182,7 @@ function jeu() { // Fonction principale du jeu
     while ($tentatives > 0) {
         echo dessinPendu($tentatives) . "\n";
         echo "Mot à deviner : " . affichiermot($mot, $lettresutilisees) . "\n";
-        echo "Tentatives restantes : $tentatives\n";
+        echo "Tentatives restantes : $tentatives . "\n";
         echo "Lettres utilisées : " . implode(', ', $lettresutilisees) . "\n";
         $lettre = choisirlettre($lettresutilisees);
         $lettresutilisees[] = $lettre;
