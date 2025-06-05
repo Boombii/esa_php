@@ -10,7 +10,7 @@ function choisirmot() { // choisira le mot au hasard dans le fichier mots.txt
 }
 
 
-function choisirlettre($lettreutilisee); { // Demande à l'utilisateur de choisir une lettre et fait des vérifications
+function choisirlettre($lettreutilisee) { // Demande à l'utilisateur de choisir une lettre et fait des vérifications
     $lettre = readline("Entrez une lettre : ");
     $lettre = mb_strtolower($lettre);
     if (mb_strlen($lettre) !== 1 || !preg_match('/^[a-z]$/', $lettre)) {
