@@ -1,6 +1,6 @@
 <?php
 
-function choisirmot() { // choisira le mot au hasard dans le fichier mots.txt
+function choisirmot() { // Choisira le mot au hasard dans le fichier mots.txt
     $mots = file("mots.txt", FILE_IGNORE_NEW_LINES);
     $mot = $mots[array_rand($mots)];
     $mot = trim($mot);
@@ -188,7 +188,7 @@ function jeu() { // Fonction principale du jeu
         $lettresutilisees[] = $lettre;
         
         if (lettrecorrecte($mot, $lettre)) {
-            if (count(array_intersect($mot, $lettresutilisees)) === count($mot)) {
+            if (count(array_intersect($mot, $lettresutilisees)) === count($mot)) { 
                 echo "Félicitations ! Vous avez deviné le mot : " . implode('', $mot) . "\n";
                 return;
             }
