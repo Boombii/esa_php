@@ -175,7 +175,7 @@ function jeu() { // Fonction principale du jeu
      |_|   \___|_| |_|\__,_|\__,_|
     ";
     $mot = choisirmot();
-    $lettresutilisees = [];
+    $lettresutilisees = []; //Initialisation de la liste des lettres utilisées
     $tentatives = 8; // Nombre de tentatives avant de perdre
     echo $titre . "\n";
     
@@ -188,7 +188,7 @@ function jeu() { // Fonction principale du jeu
         $lettresutilisees[] = $lettre;
         
         if (lettrecorrecte($mot, $lettre)) {
-            if (count(array_intersect($mot, $lettresutilisees)) === count($mot)) { 
+            if (count(array_intersect($mot, $lettresutilisees)) === count($mot)) {
                 echo "Félicitations ! Vous avez deviné le mot : " . implode('', $mot) . "\n";
                 return;
             }
@@ -196,7 +196,8 @@ function jeu() { // Fonction principale du jeu
             $tentatives--;
         }
     }
-    
+
+    echo dessinPendu($tentatives);
     echo "Désolé, vous avez perdu. Le mot était : " . implode('', $mot) . "\n";
 }
 
